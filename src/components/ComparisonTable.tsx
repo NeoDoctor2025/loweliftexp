@@ -121,7 +121,7 @@ const renderCell = (value: any) => {
       <X className="w-4 h-4 sm:w-5 sm:h-5 text-red-500 mx-auto" />
     );
   }
-  return <span className="text-xs sm:text-sm font-medium">{value}</span>;
+  return <span className="text-xs sm:text-sm font-medium text-center block">{value}</span>;
 };
 
 export default function ComparisonTable() {
@@ -148,31 +148,28 @@ export default function ComparisonTable() {
           className="overflow-x-auto -mx-4 sm:mx-0"
         >
           <div className="min-w-full bg-white sm:rounded-xl shadow-lg overflow-hidden">
-            <table className="min-w-full" style={{ minWidth: '800px' }}>
+            <table className="min-w-full" style={{ minWidth: '900px' }}>
               <thead className="bg-gray-900 text-white">
                 <tr>
-                  <th className="px-3 sm:px-6 py-4 text-left text-xs sm:text-sm font-semibold uppercase tracking-wider">
+                  <th className="px-4 sm:px-6 py-6 text-left text-sm font-semibold uppercase tracking-wider w-1/4">
                     Benefício
                   </th>
-                  <th className="px-2 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                    <div className="flex flex-col items-center">
-                      <span className="text-yellow-400 text-xs mb-1 hidden sm:block">🥉 FUNDAMENTOS</span>
-                      <span className="text-yellow-400 text-xs mb-1 sm:hidden">🥉</span>
-                      <span>ESSENTIALS</span>
+                  <th className="px-4 sm:px-6 py-6 text-center text-sm font-semibold uppercase tracking-wider w-1/4">
+                    <div className="flex flex-col items-center space-y-2">
+                      <span className="text-yellow-400 text-xs font-medium">🥉 FUNDAMENTOS</span>
+                      <span className="text-white font-bold">ESSENTIALS</span>
                     </div>
                   </th>
-                  <th className="px-2 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold uppercase tracking-wider bg-blue-800">
-                    <div className="flex flex-col items-center">
-                      <span className="text-yellow-400 text-xs mb-1 hidden sm:block">🥈 MAIS ESCOLHIDO</span>
-                      <span className="text-yellow-400 text-xs mb-1 sm:hidden">🥈</span>
-                      <span>EXPERIENCE</span>
+                  <th className="px-4 sm:px-6 py-6 text-center text-sm font-semibold uppercase tracking-wider bg-blue-800 w-1/4">
+                    <div className="flex flex-col items-center space-y-2">
+                      <span className="text-yellow-400 text-xs font-medium">🥈 MAIS ESCOLHIDO</span>
+                      <span className="text-white font-bold">EXPERIENCE</span>
                     </div>
                   </th>
-                  <th className="px-2 sm:px-6 py-4 text-center text-xs sm:text-sm font-semibold uppercase tracking-wider">
-                    <div className="flex flex-col items-center">
-                      <span className="text-yellow-400 text-xs mb-1 hidden sm:block">🥇 EXCLUSIVO</span>
-                      <span className="text-yellow-400 text-xs mb-1 sm:hidden">🥇</span>
-                      <span>AT HOME</span>
+                  <th className="px-4 sm:px-6 py-6 text-center text-sm font-semibold uppercase tracking-wider w-1/4">
+                    <div className="flex flex-col items-center space-y-2">
+                      <span className="text-yellow-400 text-xs font-medium">🥇 EXCLUSIVO</span>
+                      <span className="text-white font-bold">AT HOME</span>
                     </div>
                   </th>
                 </tr>
@@ -187,16 +184,16 @@ export default function ComparisonTable() {
                     viewport={{ once: true }}
                     className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50 transition-colors`}
                   >
-                    <td className="px-3 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-medium text-gray-900">
+                    <td className="px-4 sm:px-6 py-4 text-sm font-semibold text-gray-900 w-1/4">
                       {row.feature}
                     </td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 text-center text-gray-700">
+                    <td className="px-4 sm:px-6 py-4 text-center text-gray-700 w-1/4">
                       {renderCell(row.essentials)}
                     </td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 text-center text-gray-700 bg-blue-50">
+                    <td className="px-4 sm:px-6 py-4 text-center text-gray-700 bg-blue-50 w-1/4">
                       {renderCell(row.experience)}
                     </td>
-                    <td className="px-2 sm:px-6 py-3 sm:py-4 text-center text-gray-700">
+                    <td className="px-4 sm:px-6 py-4 text-center text-gray-700 w-1/4">
                       {renderCell(row.athome)}
                     </td>
                   </motion.tr>
